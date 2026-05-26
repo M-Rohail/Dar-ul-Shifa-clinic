@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html  { scroll-behavior: smooth; }
+  body  {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-slate-800 antialiased;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', Georgia, serif; }
+}
+
+/* ─── Components (raw CSS — avoids @apply custom-color bug) ─ */
+@layer components {
+
+  /* ── Buttons ─────────────────── */
+  .btn-navy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0a1040;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(10,16,64,0.30);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+  .btn-navy:hover {
+    background-color: #080f3a;
+    transform: translateY(-2px);
+  }
+  .btn-navy:active { transform: scale(0.95); }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f59e0b;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-gold:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+  }
+  .btn-gold:active { transform: scale(0.95); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: #0a1040;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    border: 2px solid #0a1040;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-outline:hover {
+    background-color: #0a1040;
+    color: #ffffff;
+  }
+
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    color: #0a1040;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-white:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25D366;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+  }
+  .btn-whatsapp:active { transform: scale(0.95); }
+
+  /* ── Section typography ─────── */
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d97706;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.75rem;
+  }
+  .section-tag::before,
+  .section-tag::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background-color: #f59e0b;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #080f3a;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .section-title-white {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Page hero ──────────────── */
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #080f3a 0%, #0f1a6e 55%, #080f3a 100%);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  @media (min-width: 768px) {
+    .page-hero { padding-top: 8rem; padding-bottom: 8rem; }
+  }
+
+  /* ── Cards ──────────────────── */
+  .card-white {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s;
+  }
+  .card-white:hover {
+    box-shadow: 0 8px 32px rgba(10,16,64,0.12);
+  }
+}
+
+/* ─── Utilities ─────────────────────────────────────── */
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #b45309, #f59e0b, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-navy-gradient {
+    background: linear-gradient(135deg, #080f3a 0%, #0f1a6e 50%, #0a1040 100%);
+  }
+  .grid-dots {
+    background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .bg-hero-grid {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .shadow-navy  { box-shadow: 0 8px 32px rgba(10,16,64,0.30); }
+  .shadow-gold  { box-shadow: 0 4px 20px rgba(245,158,11,0.35); }
+  .shadow-card  { box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06); }
+  .shadow-card-hover { box-shadow: 0 8px 32px rgba(10,16,64,0.12); }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #0f1a6e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #080f3a; }
