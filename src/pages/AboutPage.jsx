@@ -46,8 +46,8 @@ export default function AboutPage() {
               className="relative">
               <div className="absolute -top-4 -left-4 w-20 h-20 border-t-[3px] border-l-[3px] border-gold-500 rounded-tl-2xl z-10" />
               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-[3px] border-r-[3px] border-navy-800 rounded-br-2xl z-10" />
-              <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(10,16,64,0.18)] border-2 border-slate-100">
-                <img src={doctorImg} alt="Dr. Abdul Moeed" className="w-full h-[520px] object-cover object-top" loading="lazy" />
+              <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(10,16,64,0.18)] border-2 border-slate-100 bg-slate-50">
+                <img src={doctorImg} alt="Dr. Abdul Moeed" className="w-full object-contain object-center" loading="lazy" />
               </div>
 
               {/* Floating badges */}

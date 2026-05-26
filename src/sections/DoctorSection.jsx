@@ -34,9 +34,9 @@ export default function DoctorSection() {
             <div className="absolute top-0 left-0 w-16 sm:w-20 h-16 sm:h-20 border-t-[3px] border-l-[3px] border-gold-500 rounded-tl-2xl z-10" />
             <div className="absolute bottom-4 right-0 w-16 sm:w-20 h-16 sm:h-20 border-b-[3px] border-r-[3px] border-navy-900 rounded-br-2xl z-10" />
 
-            <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(10,16,64,0.2)] border-2 border-slate-100">
+            <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(10,16,64,0.2)] border-2 border-slate-100 bg-slate-50">
               <img src={doctorImg} alt="Dr. Abdul Moeed — Dar-ul-Shifa Homoeopathic Clinic"
-                className="w-full h-[320px] sm:h-[420px] lg:h-[500px] object-cover object-top" loading="lazy" />
+                className="w-full object-contain object-center" loading="lazy" />
             </div>
 
             {/* Experience badge — repositioned for mobile */}
